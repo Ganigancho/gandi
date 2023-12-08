@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  .header {
+    height: 85px;
+    background: rgb(242, 39, 39);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+  }
+  .content-h {
+    margin: 0 100px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .content-h img {
+    width: 80px;
+    height: 70px;
+    border-radius: 50%;
+  }
+  
+  input::placeholder {
+    color: red;
+  }
+  .content-h ul a {
+    text-decoration: none;
+    font-size: 19px;
+    color: white;
+    padding: 0 10px;
+  }
+  .content-h ul .kontakt {
+    text-decoration: underline;
+  }
+  .form {
+    margin-top: 85px;
+    height: 80vh;
+  }
+  .content-f {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 100px 150px;
+  }
+  .content-f input[type="text"],
+  textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+  
+  .content-f input[type="submit"] {
+    background-color: rgb(242, 39, 39);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .footer {
+    height: 15vh;
+    background: rgb(242, 39, 39);
+    background: linear-gradient(
+      to bottom,
+      rgb(242, 39, 39, 0.1),
+      rgb(242, 39, 39)
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(22, 22, 22);
+  }
+  .content-h .inputi {
+    width: 450px;
+    height: 40px;
+    border: none;
+    padding: 0 20px;
+    font-size: 19px;
+    border-radius: 20px;
+  }
