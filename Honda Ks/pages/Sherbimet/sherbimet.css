@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  .header {
+    height: 85px;
+    background: rgb(242, 39, 39);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+  }
+  .content-h {
+    margin: 0 100px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .content-h img {
+    width: 80px;
+    height: 70px;
+    border-radius: 50%;
+  }
+  .content-h input {
+    width: 450px;
+    height: 40px;
+    border: none;
+    padding: 0 20px;
+    font-size: 19px;
+    border-radius: 20px;
+  }
+  input::placeholder {
+    color: red;
+  }
+  .content-h ul a {
+    text-decoration: none;
+    font-size: 19px;
+    color: white;
+    padding: 0 10px;
+  }
+  .content-h ul .sherbimet {
+    text-decoration: underline;
+  }
+  .main {
+    margin-top: 85px;
+    height: 80vh;
+  }
+  .main .content-m{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 100px 150px;
+  }
+  .content-m h1{
+      padding: 30px;
+      text-decoration: underline;
+  }
+  .content-m p {
+      font-size: 22px;
+      
+  }
+  
+  .footer {
+    height: 15vh;
+    background: rgb(242, 39, 39);
+    background: linear-gradient(
+      to bottom,
+      rgb(242, 39, 39, 0.1),
+      rgb(242, 39, 39)
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(22, 22, 22);
+  }
+  
