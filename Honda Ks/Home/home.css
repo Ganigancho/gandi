@@ -55,7 +55,7 @@ input::placeholder {
 .video-container video {
   width: 100%;
 }
-.background-mobile{
+.background-mobile {
   display: none;
 }
 .main {
@@ -116,18 +116,26 @@ input::placeholder {
   .header {
     display: none;
   }
-  .video-container{
+  .video-container {
     display: none;
   }
- .footer{
-  height: 50px;
-  font-size: 9px;
- }
+  .footer {
+    height: 50px;
+    font-size: 9px;
+  }
   .header-mobile {
     display: block;
     background: rgb(242, 39, 39);
     height: 50px;
     color: white;
+    transition: all 1s ease-in-out;
+  }
+  .up {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
   }
   .content-mobile {
     display: flex;
@@ -154,7 +162,6 @@ input::placeholder {
     right: 0;
     z-index: 9999;
     display: none;
-    
   }
   .menu-mobile input[type="search"] {
     width: 300px;
@@ -175,7 +182,7 @@ input::placeholder {
     color: rgb(242, 39, 39);
     padding: 4px 0;
   }
-  ul .logimi{
+  ul .logimi {
     width: 90px;
     border: 1px solid white;
     padding: 2px 3px;
@@ -183,18 +190,21 @@ input::placeholder {
     color: white;
     border-radius: 5px;
   }
-  ul .logimi:hover{
+  ul .logimi:hover {
     background: rgb(252, 252, 252);
     color: rgb(0, 0, 0);
     border: 2px solid black;
   }
-  .visible{
+  .visible {
     display: block;
   }
-  .background-mobile{
+  .background-mobile {
     display: block;
   }
-  .background-mobile img{
+  .mg-t {
+    margin-top: 50px;
+  }
+  .background-mobile img {
     width: 100%;
     height: auto;
   }
@@ -202,27 +212,27 @@ input::placeholder {
     height: auto;
     display: block;
   }
-  .content-m{
+  .content-m {
     width: 100%;
     margin: 0;
     margin-top: 30px;
   }
-  .content-m .pyetjet{
+  .content-m .pyetjet {
     padding: 5px 30px;
   }
-  .pyetjet h1{
+  .pyetjet h1 {
     font-size: 19px;
   }
-  .pyetjet p{
+  .pyetjet p {
     font-size: 14px;
   }
-  .img-m{
+  .img-m {
     width: 85%;
     margin: 0;
     margin-left: 30px;
     margin-bottom: 20px;
   }
-  .img-m img{
+  .img-m img {
     width: 50%;
     height: 250px;
   }
