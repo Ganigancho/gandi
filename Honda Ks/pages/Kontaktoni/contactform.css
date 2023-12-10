@@ -107,6 +107,14 @@ textarea {
     background: rgb(242, 39, 39);
     height: 50px;
     color: white;
+    transition: all 1s ease-in-out;
+  }
+  .up {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
   }
   .content-mobile {
     display: flex;
@@ -175,6 +183,9 @@ textarea {
   }
   .form{
     margin: 0;
+  }
+  .mg-t{
+    margin-top: 50px;
   }
   .content-f{
     margin: 0 20px;
