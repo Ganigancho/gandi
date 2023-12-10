@@ -97,6 +97,7 @@ input::placeholder {
     background: rgb(242, 39, 39);
     height: 50px;
     color: white;
+    transition: all 1s ease-in-out;
   }
   .content-mobile {
     display: flex;
@@ -176,5 +177,15 @@ input::placeholder {
   .content-m p {
     font-size: 11px;
     padding: 0 5px;
+  }
+  .mg-t{
+    margin-top: 50px;
+  }
+  .up {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
   }
 }
