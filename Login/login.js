@@ -19,6 +19,6 @@ document
     if (username === "admin" && password === "1234") {
       window.location.href = "../Honda Ks/Home/Home.html";
     } else {
-      alert("Invalid username or password. Please try again.");
+      alert("Emëri i përdoruesit ose fjalëkalimi i pavlefshëm. Ju lutemi provoni përsëri.");
     }
   });
