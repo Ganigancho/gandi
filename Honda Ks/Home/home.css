@@ -2,6 +2,9 @@
   margin: 0;
   padding: 0;
 }
+.header-mobile {
+  display: none;
+}
 .header {
   height: 85px;
   width: 100%;
@@ -51,6 +54,9 @@ input::placeholder {
 }
 .video-container video {
   width: 100%;
+}
+.background-mobile{
+  display: none;
 }
 .main {
   display: flex;
@@ -105,4 +111,119 @@ input::placeholder {
   justify-content: center;
   align-items: center;
   color: rgb(22, 22, 22);
+}
+@media screen and (max-width: 767px) {
+  .header {
+    display: none;
+  }
+  .video-container{
+    display: none;
+  }
+ .footer{
+  height: 50px;
+  font-size: 9px;
+ }
+  .header-mobile {
+    display: block;
+    background: rgb(242, 39, 39);
+    height: 50px;
+    color: white;
+  }
+  .content-mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 10px;
+  }
+  .content-mobile img {
+    width: 40px;
+    margin-top: 5px;
+    border-radius: 50%;
+  }
+  svg {
+    color: white;
+  }
+  .menu-mobile {
+    background-color: rgb(248, 246, 244);
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.1);
+    height: 165px;
+    position: fixed;
+    top: 50px;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    display: none;
+    
+  }
+  .menu-mobile input[type="search"] {
+    width: 300px;
+    height: 25px;
+    margin-left: 50px;
+    margin-top: 10px;
+    border-color: red;
+    background-color: white;
+    padding-left: 10px;
+  }
+  ul {
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+  }
+  ul a {
+    text-decoration: none;
+    color: rgb(242, 39, 39);
+    padding: 4px 0;
+  }
+  ul .logimi{
+    width: 90px;
+    border: 1px solid white;
+    padding: 2px 3px;
+    background: black;
+    color: white;
+    border-radius: 5px;
+  }
+  ul .logimi:hover{
+    background: rgb(252, 252, 252);
+    color: rgb(0, 0, 0);
+    border: 2px solid black;
+  }
+  .visible{
+    display: block;
+  }
+  .background-mobile{
+    display: block;
+  }
+  .background-mobile img{
+    width: 100%;
+    height: auto;
+  }
+  .main {
+    height: auto;
+    display: block;
+  }
+  .content-m{
+    width: 100%;
+    margin: 0;
+    margin-top: 30px;
+  }
+  .content-m .pyetjet{
+    padding: 5px 30px;
+  }
+  .pyetjet h1{
+    font-size: 19px;
+  }
+  .pyetjet p{
+    font-size: 14px;
+  }
+  .img-m{
+    width: 85%;
+    margin: 0;
+    margin-left: 30px;
+    margin-bottom: 20px;
+  }
+  .img-m img{
+    width: 50%;
+    height: 250px;
+  }
 }
