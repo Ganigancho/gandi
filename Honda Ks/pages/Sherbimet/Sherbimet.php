@@ -12,7 +12,7 @@
         <div class="content-h">
           <img src="../../asetet/logo.jpg" alt="" />
           <ul>
-            <a href="../../Home/Home.html">
+            <a href="../../Home/Home.php">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="22"
@@ -26,21 +26,21 @@
                 />
               </svg>
             </a>
-            <a class="sherbimet" href="Sherbimet.html">Sherbimet</a>
-            <a href="../Kontaktoni/ContactForm.html">Kontaktoni</a>
-            <a href="../Produktet/Produktet.html">Produktet</a>
+            <a class="sherbimet" href="Sherbimet.php">Sherbimet</a>
+            <a href="../Kontaktoni/ContactForm.php">Kontaktoni</a>
+            <a href="../Produktet/Produktet.php">Produktet</a>
           </ul>
           <input type="text" placeholder="Kerkoni ...." />
           <ul>
-            <a href="../../../Login/login.html">Dil nga Faqja</a>
+            <a href="../../../Login/login.php">Dil nga Faqja</a>
           </ul>
         </div>
       </div>
       <div class="header-mobile" id="mobile-up">
         <div class="content-mobile">
-          <a href="../../Home/Home.html"><img src="../../asetet/logo.jpg" alt="" /></a>
+          <a href="../../Home/Home.php"><img src="../../asetet/logo.jpg" alt="" /></a>
           
-          <a href="../../Home/Home.html"><h2>Honda KS</h2></a>
+          <a href="../../Home/Home.php"><h2>Honda KS</h2></a>
           <svg
             id="menu-visible"
             xmlns="http://www.w3.org/2000/svg"
@@ -77,10 +77,10 @@
         <div id="menu" class="menu-mobile">
           <input type="search" placeholder="Kerkoni ...." />
           <ul>
-            <a href="Sherbimet.html">Sherbimet</a>
-            <a href="../../pages/Kontaktoni/ContactForm.html">Kontaktoni</a>
-            <a href="../../pages/Produktet/Produktet.html">Produktet</a>
-            <a class="logimi" href="../../../Login/login.html">Dil nga Faqja</a>
+            <a href="Sherbimet.php">Sherbimet</a>
+            <a href="../../pages/Kontaktoni/ContactForm.php">Kontaktoni</a>
+            <a href="../../pages/Produktet/Produktet.php">Produktet</a>
+            <a class="logimi" href="../../../Login/login.php">Dil nga Faqja</a>
           </ul>
         </div>
       </div>
@@ -88,7 +88,7 @@
     <main id="close-menu">
       <div class="main">
         <div class="content-m" id="margin-top">
-          <h1>Sherbimet</h1>
+          <h1>Shërbimet</h1>
           <p>
             Kompania jonë është përkushtuar në sigurimin e një game të gjerë të
             produkteve për nevojat tuaja energjetike dhe të transportit në çdo

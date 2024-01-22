@@ -116,7 +116,7 @@
               <div class="have-acc">
                 <p>
                   Ju keni nje llogari.
-                  <a href="../Login/login.html">Logoju</a>
+                  <a href="../Login/login.php">Logoju</a>
                 </p>
               </div>
               <br /><br />
