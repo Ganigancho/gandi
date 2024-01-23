@@ -53,7 +53,7 @@ input[type="password"] {
   outline: none;
   border: none;
 }
-input[type="submit"] {
+.button-submit {
   border: none;
   padding: 15px 35px;
   align-items: center;
@@ -63,6 +63,7 @@ input[type="submit"] {
   border-radius: 5px;
   margin-left: 55px;
 }
+
 .have-acc {
   margin-top: 10px;
   color: red;
@@ -70,7 +71,6 @@ input[type="submit"] {
 .have-acc a {
   text-decoration: none;
 }
-
 @media screen and (max-width: 767px) {
   .login {
     align-items: start;
