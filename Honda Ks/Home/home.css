@@ -49,6 +49,10 @@ input::placeholder {
   color: white;
   padding: 0 10px;
 }
+.content-h .user{
+  border: 2px solid white;
+  padding: 7px 5px;
+}
 .video-container {
   height: calc(100vh-85px);
 }
@@ -97,6 +101,7 @@ input::placeholder {
 .img-m img {
   width: 500px;
   height: 450px;
+  object-fit: contain;
   border-radius: 50%;
 }
 .footer {
@@ -142,6 +147,7 @@ input::placeholder {
     justify-content: space-between;
     align-items: center;
     margin: 0 10px;
+    
   }
   .content-mobile img {
     width: 40px;
@@ -200,8 +206,9 @@ input::placeholder {
   }
   .background-mobile {
     display: block;
+    
   }
-  .mg-t {
+  .mg-t{
     margin-top: 50px;
   }
   .background-mobile img {

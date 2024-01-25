@@ -12,7 +12,7 @@ class Login extends ConnectDB
 
     public function validateLogin()
     {
-        $query = "SELECT * FROM userss WHERE username = :username";
+        $query = "SELECT * FROM users WHERE username = :username";
         $stmt = $this->connect()->prepare($query);
         $stmt->bindParam(":username", $this->username);
         $stmt->execute();
