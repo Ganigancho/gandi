@@ -26,13 +26,13 @@
                 />
               </svg>
             </a>
-            <a href="../pages/Sherbimet/Sherbimet.html">Sherbimet</a>
-            <a href="../pages/Kontaktoni/ContactForm.html">Kontaktoni</a>
-            <a href="../pages/Produktet/Produktet.html">Produktet</a>
+            <a href="../pages/Sherbimet/Sherbimet.php">Sherbimet</a>
+            <a href="../pages/Kontaktoni/ContactForm.php">Kontaktoni</a>
+            <a href="../pages/Produktet/Produktet.php">Produktet</a>
           </ul>
           <input type="text" placeholder="Kerkoni ...." />
           <ul>
-            <a href="../../Login/login.html">Dil nga Faqja</a>
+            <a href="../../Login/login.php">Dil nga Faqja</a>
           </ul>
         </div>
       </div>
@@ -76,10 +76,10 @@
         <div id="menu" class="menu-mobile">
           <input type="search" placeholder="Kerkoni ...." />
           <ul>
-            <a href="../pages/Sherbimet/Sherbimet.html">Sherbimet</a>
-            <a href="../pages/Kontaktoni/ContactForm.html">Kontaktoni</a>
-            <a href="../pages/Produktet/Produktet.html">Produktet</a>
-            <a class="logimi" href="../../Login/login.html">Dil nga Faqja</a>
+            <a href="../pages/Sherbimet/Sherbimet.php">Sherbimet</a>
+            <a href="../pages/Kontaktoni/ContactForm.php">Kontaktoni</a>
+            <a href="../pages/Produktet/Produktet.php">Produktet</a>
+            <a class="logimi" href="../../Login/login.php">Dil nga Faqja</a>
           </ul>
         </div> 
       </div>

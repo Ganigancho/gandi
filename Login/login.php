@@ -64,7 +64,7 @@
                 />
               </div>
               <div class="no-acc">
-                <p>Ju nuk keni nje llogari. <a href="../Regjistroju/Regjistroju.html">Regjistroju</a></p>
+                <p>Ju nuk keni nje llogari. <a href="../Regjistroju/Regjistroju.php">Regjistroju</a></p>
               </div>
               <br /><br />
               <input type="submit" value="Sign In" />

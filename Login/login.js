@@ -17,7 +17,7 @@ document
     const password = document.getElementById("password").value;
 
     if (username === "admin" && password === "1234") {
-      window.location.href = "../Honda Ks/Home/Home.html";
+      window.location.href = "../Honda Ks/Home/Home.php";
     } else {
       alert("Emëri i përdoruesit ose fjalëkalimi i pavlefshëm. Ju lutemi provoni përsëri.");
     }

@@ -12,7 +12,7 @@
         <div class="content-h">
           <img src="../../asetet/logo.jpg" alt="" />
           <ul>
-            <a href="../../Home/Home.html">
+            <a href="../../Home/Home.php">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="22"
@@ -26,23 +26,23 @@
                 />
               </svg>
             </a>
-            <a href="../Sherbimet/Sherbimet.html">Sherbimet</a>
-            <a href="../Kontaktoni/ContactForm.html">Kontaktoni</a>
-            <a class="produktet" href="../Produktet/Produktet.html"
+            <a href="../Sherbimet/Sherbimet.php">Sherbimet</a>
+            <a href="../Kontaktoni/ContactForm.php">Kontaktoni</a>
+            <a class="produktet" href="../Produktet/Produktet.php"
               >Produktet</a
             >
           </ul>
           <input type="text" placeholder="Kerkoni ...." />
           <ul>
-            <a href="../../../Login/login.html">Dil nga Faqja</a>
+            <a href="../../../Login/login.php">Dil nga Faqja</a>
           </ul>
         </div>
       </div>
       <div class="header-mobile" id="mobile-up">
         <div class="content-mobile">
-          <a href="../../Home/Home.html"><img src="../../asetet/logo.jpg" alt="" /></a>
+          <a href="../../Home/Home.php"><img src="../../asetet/logo.jpg" alt="" /></a>
           
-          <a href="../../Home/Home.html"><h2>Honda KS</h2></a>
+          <a href="../../Home/Home.php"><h2>Honda KS</h2></a>
           <svg
             id="menu-visible"
             xmlns="http://www.w3.org/2000/svg"
@@ -79,10 +79,10 @@
         <div id="menu" class="menu-mobile">
           <input type="search" placeholder="Kerkoni ...." />
           <ul>
-            <a href="../Sherbimet/Sherbimet.html">Sherbimet</a>
-            <a href="../Kontaktoni/ContactForm.html">Kontaktoni</a>
-            <a href="Produktet.html">Produktet</a>
-            <a class="logimi" href="../../../Login/login.html">Dil nga Faqja</a>
+            <a href="../Sherbimet/Sherbimet.php">Sherbimet</a>
+            <a href="../Kontaktoni/ContactForm.php">Kontaktoni</a>
+            <a href="Produktet.php">Produktet</a>
+            <a class="logimi" href="../../../Login/login.php">Dil nga Faqja</a>
           </ul>
         </div>
       </div>
