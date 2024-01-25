@@ -8,45 +8,34 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-const registrationForm = document.getElementById("loginForm");
+const nameField = document.getElementById("name");
+const nameValue = nameField.value.trim();
 
-registrationForm.addEventListener("submit", function (event) {
-  event.preventDefault();
+if (nameValue === "") {
+  alert("Ju lutemi jepeni emrin e juaj");
+  return false;
+}
 
-  const nameField = document.getElementById("name");
-  const nameValue = nameField.value.trim();
+const usernameField = document.getElementById("username");
+const usernameValue = usernameField.value.trim();
 
-  if (nameValue === "") {
-    alert("Ju lutemi jepeni emrin e juaj");
-    return false;
-  }
+if (usernameValue === "") {
+  alert("Ju lutemi jepeni nje emer te perdoruesit");
+  return false;
+}
 
-  const usernameField = document.getElementById("username");
-  const usernameValue = usernameField.value.trim();
+const emailField = document.getElementById("email");
+const emailValue = emailField.value.trim();
 
-  if (usernameValue === "") {
-    alert("Ju lutemi jepeni nje emer te perdoruesit");
-    return false;
-  }
+if (!/^\S+@\S+\.\S+$/.test(emailValue)) {
+  alert("Ju lutemi jepeni një adresë të vlefshme emaili.");
+  return false;
+}
 
-  const emailField = document.getElementById("email");
-  const emailValue = emailField.value.trim();
+const passwordField = document.getElementById("password");
+const passwordValue = passwordField.value;
 
-  if (!/^\S+@\S+\.\S+$/.test(emailValue)) {
-    alert("Ju lutemi jepeni një adresë të vlefshme emaili.");
-    return false;
-  }
-
-  const passwordField = document.getElementById("password");
-  const passwordValue = passwordField.value;
-
-  if (passwordValue === "") {
-    alert("Ju lutem jepeni nje fjalkalim");
-    return false;
-  }
-  function windowHref() {
-    window.location.href = "../Login/login.html";
-  }
-  alert("Jeni regjistruar me sukes");
-  windowHref();
-});
+if (passwordValue === "") {
+  alert("Ju lutem jepeni nje fjalkalim");
+  return false;
+}
