@@ -1,6 +1,6 @@
 <?php
 
-$whoAdd = "GANI";
+$whoAdd = "ANDI";
 
 ?>
 <html lang="en">

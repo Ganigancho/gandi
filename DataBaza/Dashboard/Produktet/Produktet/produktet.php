@@ -21,8 +21,6 @@ $getProd = new GetProduct();
 
 $usersData = $getProd->getProds();
 
-//https://honda-ks.eu/wp-content/uploads/2019/06/88.png
-
 ?>
 <html lang="en">
 <a href="../../../../Login/login.php"></a>
@@ -99,7 +97,7 @@ $usersData = $getProd->getProds();
             <p><?php echo $user['whoadd']; ?></p>
             <div class="butonat">
               <a href="">Edit</a>
-              <a href="">Delete</a>
+              <a href="../DeleteProd/delete.php?deleteid=<?php echo $user['id']; ?>">Delete</a>
             </div>
           </div>
         <?php endforeach; ?>
