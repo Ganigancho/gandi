@@ -99,7 +99,7 @@ $usersData = $getProd->getProds();
             <p><?php echo $user['whoadd']; ?></p>
             <div class="butonat">
               <a href="">Edit</a>
-              <a href="">Delete</a>
+              <a href="../DeleteProd/delete.php?deleteid=<?php echo $user['id']; ?>">Delete</a>
             </div>
           </div>
         <?php endforeach; ?>
