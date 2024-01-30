@@ -96,7 +96,7 @@ $usersData = $getProd->getProds();
             <p><?php echo $user['create_at']; ?></p>
             <p><?php echo $user['whoadd']; ?></p>
             <div class="butonat">
-              <a href="">Edit</a>
+              <a href="../UpdateProd/updateProd.php?updateprod=<?php echo $user['id']; ?>">Edit</a>
               <a href="../DeleteProd/delete.php?deleteid=<?php echo $user['id']; ?>">Delete</a>
             </div>
           </div>
