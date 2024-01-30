@@ -1,3 +1,8 @@
+<?php
+
+$whoAdd = "GANI";
+
+?>
 <html lang="en">
 
 <head>
@@ -44,6 +49,8 @@
               </label>
               <input class="input-focused" type="text" name="pricep" required>
             </div>
+            <br>
+            <input class="padd" readonly="readonly" type="text" name="whoadd" value="<?php echo $whoAdd ?>">
             <br />
             <br />
             <button class="button-submit">Shtoje Produktin</button>

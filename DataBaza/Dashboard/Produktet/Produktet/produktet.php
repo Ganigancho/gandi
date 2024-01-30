@@ -2,7 +2,7 @@
 include('../../../ConfigSession.php');
 require_once "../../../ConnectDB.php";
 
-class GetProduct extends ConnectDB 
+class GetProduct extends ConnectDB
 {
   public function getProds()
   {
@@ -96,6 +96,7 @@ $usersData = $getProd->getProds();
             <p class="descp"><?php echo $user['descp']; ?></p>
             <p><?php echo $user['pricep']; ?></p>
             <p><?php echo $user['create_at']; ?></p>
+            <p><?php echo $user['whoadd']; ?></p>
             <div class="butonat">
               <a href="">Edit</a>
               <a href="">Delete</a>

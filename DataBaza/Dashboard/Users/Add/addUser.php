@@ -18,7 +18,7 @@ if (isset($_POST['SUBMIT'])) {
       echo "Problem gjatë regjistrimit: " . $e->getMessage();
   }
 }
-?>
+?> 
 <html lang="en">
 
 <head>
