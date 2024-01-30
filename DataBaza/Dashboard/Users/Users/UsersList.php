@@ -43,7 +43,7 @@ $usersData = $getData->getUsers();
   <header>
       <div class="header">
         <div class="content-h">
-          <img src="../../../../Honda Ks/asetet/logo.jpg" alt="" />
+        <img src="./logo.jpg" alt="" />
           <ul>
             <a class="home" href="../../../../Honda Ks/Home/Home.php">
               <svg
@@ -135,7 +135,7 @@ $usersData = $getData->getUsers();
                         <p><?php echo substr($user['passw'],0,12); ?></p>
                         <p><?php echo $user['create_data']; ?></p>
                         <div class="butonat">
-                            <a href="">Edit</a>
+                            <a href="../Update/update.php?updateid=<?php echo $user['id']; ?>">Edit</a>
                             <a href="">Delete</a>
                         </div>
                     </div>
