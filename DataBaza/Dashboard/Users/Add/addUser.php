@@ -2,11 +2,6 @@
 require_once "../../../SignUp.php";
 include('../../../ConfigSession.php');
 
-if (!isset($_SESSION["user_id"])) {
-  header("Location: ../../../../Login/login.php");
-  exit();
-}
-
 if (isset($_POST['SUBMIT'])) {
   $name = $_POST["name"];
   $username = $_POST["username"];
