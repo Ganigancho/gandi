@@ -136,7 +136,7 @@ $usersData = $getData->getUsers();
                         <p><?php echo $user['create_data']; ?></p>
                         <div class="butonat">
                             <a href="../Update/update.php?updateid=<?php echo $user['id']; ?>">Edit</a>
-                            <a href="">Delete</a>
+                            <a href="../Delete/delete.php?deleteid=<?php echo $user['id']; ?>">Delete</a>
                         </div>
                     </div>
                 <?php endforeach; ?>
