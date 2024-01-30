@@ -1,295 +1,125 @@
+<?php
+require_once "../../../DataBaza/ConnectDB.php";
+
+class GetProduct extends ConnectDB
+{
+  public function getProds()
+  {
+    $query = "SELECT * FROM products";
+    $stmt = $this->connect()->prepare($query);
+    $stmt->execute();
+
+    if ($stmt) {
+      return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    } else {
+      return false;
+    }
+  }
+}
+$getProd = new GetProduct();
+
+$usersData = $getProd->getProds();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="produktet.css" />
-    <title>Honda Ks</title>
-  </head>
-  <body>
-    <header>
-      <div class="header">
-        <div class="content-h">
-          <img src="../../asetet/logo.jpg" alt="" />
-          <ul>
-            <a href="../../Home/Home.php">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="22"
-                height="18"
-                fill="white"
-                class="bi bi-house-door-fill"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"
-                />
-              </svg>
-            </a>
-            <a href="../Sherbimet/Sherbimet.php">Sherbimet</a>
-            <a href="../Kontaktoni/ContactForm.php">Kontaktoni</a>
-            <a class="produktet" href="../Produktet/Produktet.php"
-              >Produktet</a
-            >
-          </ul>
-          <input type="text" placeholder="Kerkoni ...." />
-          <ul>
-            <a href="../../../Login/login.php">Dil nga Faqja</a>
-          </ul>
-        </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="produktet.css" />
+  <title>Honda Ks</title>
+</head>
+
+<body>
+  <header>
+    <div class="header">
+      <div class="content-h">
+        <img src="../../asetet/logo.jpg" alt="" />
+        <ul>
+          <a href="../../Home/Home.php">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="18" fill="white" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+              <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z" />
+            </svg>
+          </a>
+          <a href="../Sherbimet/Sherbimet.php">Sherbimet</a>
+          <a href="../Kontaktoni/ContactForm.php">Kontaktoni</a>
+          <a class="produktet" href="../Produktet/Produktet.php">Produktet</a>
+        </ul>
+        <input type="text" placeholder="Kerkoni ...." />
+        <ul>
+          <a href="../../../DataBaza/Dashboard/Dashboard/dashboard.php">Paneli</a>
+          <a href="../../../Login/login.php?logout=true">Largoju</a>
+        </ul>
       </div>
-      <div class="header-mobile" id="mobile-up">
-        <div class="content-mobile">
-          <a href="../../Home/Home.php"><img src="../../asetet/logo.jpg" alt="" /></a>
-          
-          <a href="../../Home/Home.php"><h2>Honda KS</h2></a>
-          <svg
-            id="menu-visible"
-            xmlns="http://www.w3.org/2000/svg"
-            x="0px"
-            y="0px"
-            width="20"
-            height="20"
-            viewBox="0,0,256,256"
-          >
-            <g
-              fill="#ffffff"
-              fill-rule="nonzero"
-              stroke="none"
-              stroke-width="1"
-              stroke-linecap="butt"
-              stroke-linejoin="miter"
-              stroke-miterlimit="10"
-              stroke-dasharray=""
-              stroke-dashoffset="0"
-              font-family="none"
-              font-weight="none"
-              font-size="none"
-              text-anchor="none"
-              style="mix-blend-mode: normal"
-            >
-              <g transform="scale(5.12,5.12)">
-                <path
-                  d="M3,8c-0.72127,-0.0102 -1.39216,0.36875 -1.75578,0.99175c-0.36361,0.623 -0.36361,1.39351 0,2.01651c0.36361,0.623 1.0345,1.00195 1.75578,0.99175h44c0.72127,0.0102 1.39216,-0.36875 1.75578,-0.99175c0.36361,-0.623 0.36361,-1.39351 0,-2.01651c-0.36361,-0.623 -1.0345,-1.00195 -1.75578,-0.99175zM3,23c-0.72127,-0.0102 -1.39216,0.36875 -1.75578,0.99175c-0.36361,0.623 -0.36361,1.39351 0,2.01651c0.36361,0.623 1.0345,1.00195 1.75578,0.99175h44c0.72127,0.0102 1.39216,-0.36875 1.75578,-0.99175c0.36361,-0.623 0.36361,-1.39351 0,-2.01651c-0.36361,-0.623 -1.0345,-1.00195 -1.75578,-0.99175zM3,38c-0.72127,-0.0102 -1.39216,0.36875 -1.75578,0.99175c-0.36361,0.623 -0.36361,1.39351 0,2.01651c0.36361,0.623 1.0345,1.00195 1.75578,0.99175h44c0.72127,0.0102 1.39216,-0.36875 1.75578,-0.99175c0.36361,-0.623 0.36361,-1.39351 0,-2.01651c-0.36361,-0.623 -1.0345,-1.00195 -1.75578,-0.99175z"
-                ></path>
-              </g>
+    </div>
+    <div class="header-mobile">
+      <div class="content-mobile">
+        <a href="../../Home/Home.php"><img src="../../asetet/logo.jpg" alt="" /></a>
+
+        <a href="../../Home/Home.php">
+          <h2>Honda KS</h2>
+        </a>
+        <svg id="menu-visible" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0,0,256,256">
+          <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+            <g transform="scale(5.12,5.12)">
+              <path d="M3,8c-0.72127,-0.0102 -1.39216,0.36875 -1.75578,0.99175c-0.36361,0.623 -0.36361,1.39351 0,2.01651c0.36361,0.623 1.0345,1.00195 1.75578,0.99175h44c0.72127,0.0102 1.39216,-0.36875 1.75578,-0.99175c0.36361,-0.623 0.36361,-1.39351 0,-2.01651c-0.36361,-0.623 -1.0345,-1.00195 -1.75578,-0.99175zM3,23c-0.72127,-0.0102 -1.39216,0.36875 -1.75578,0.99175c-0.36361,0.623 -0.36361,1.39351 0,2.01651c0.36361,0.623 1.0345,1.00195 1.75578,0.99175h44c0.72127,0.0102 1.39216,-0.36875 1.75578,-0.99175c0.36361,-0.623 0.36361,-1.39351 0,-2.01651c-0.36361,-0.623 -1.0345,-1.00195 -1.75578,-0.99175zM3,38c-0.72127,-0.0102 -1.39216,0.36875 -1.75578,0.99175c-0.36361,0.623 -0.36361,1.39351 0,2.01651c0.36361,0.623 1.0345,1.00195 1.75578,0.99175h44c0.72127,0.0102 1.39216,-0.36875 1.75578,-0.99175c0.36361,-0.623 0.36361,-1.39351 0,-2.01651c-0.36361,-0.623 -1.0345,-1.00195 -1.75578,-0.99175z"></path>
             </g>
-          </svg>
-        </div>
-        <div id="menu" class="menu-mobile">
-          <input type="search" placeholder="Kerkoni ...." />
-          <ul>
-            <a href="../Sherbimet/Sherbimet.php">Sherbimet</a>
-            <a href="../Kontaktoni/ContactForm.php">Kontaktoni</a>
-            <a href="Produktet.php">Produktet</a>
-            <a class="logimi" href="../../../Login/login.php">Dil nga Faqja</a>
-          </ul>
-        </div>
+          </g>
+        </svg>
       </div>
-    </header>
-    <main id="close-menu" >
-      <div class="main" id="margin-top">
-        <div class="content-m">
+      <div id="menu" class="menu-mobile">
+        <input type="search" placeholder="Kerkoni ...." />
+        <ul>
+          <a href="../Sherbimet/Sherbimet.php">Sherbimet</a>
+          <a href="../Kontaktoni/ContactForm.php">Kontaktoni</a>
+          <a href="Produktet.php">Produktet</a>
+          <a class="logimi" href="../../../Login/login.php">Dil nga Faqja</a>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="main">
+      <div class="assprod">
+        <?php
+        if (isset($_SESSION['user_role']) && $_SESSION['user_role'] === 'admin') {
+
+          echo '<a href="../../../DataBaza/Dashboard/Produktet/AddProdPath/addprod.php">Shto Produkt</a>';
+        }
+        ?>
+      </div>
+      <div class="content-m">
+        <?php foreach ($usersData as $user) : ?>
           <div class="card-content">
             <div class="image">
-              <img src="../../asetet/atv2.jpg" alt="" />
-            </div>
-            <div class="description">
-              <h1>ATV 500CC 2023</h1>
-              <p>
-                Motorrat ATV me 4 rrota të shkurter ofrojnë gjendshmëri të lartë
-                në terren të vështirë me rrota të mëdha dhe strukturë të
-                qëndrueshme. Përveç fuqisë së tyre të motorit të fuqishëm, ata
-                kanë sisteme të avancuara të frenimit dhe amortizimit për
-                kontroll të mirë në terren të vështirë. Struktura e tyre i bën
-                ata të manovrueshëm dhe ofrojnë mbrojtje të përshtatshme për
-                operatorin, duke u bërë multifunksionalë për shumë përdorime në
-                natyrë, punë në fermë dhe argëtim rekreativ.
-              </p>
-              <div class="cmimi">
-                <h2>Price:</h2>
-                <h2 class="cmimii">2000€</h2>
-              </div>
-            </div>
-          </div>
-          <div class="card-content">
-            <div class="image">
-              <img src="../../asetet/gene3.jpg" alt="" />
+              <img src="../../../DataBaza/Dashboard/Produktet/CRUD Produkteve/<?php echo $user['imagep'] ?>" alt="" />
             </div>
             <div class="description">
               <div class="teksti">
-                <h1>Gjenerator 4.2Kva 2023</h1>
+                <h1><?php echo $user['titlep'] ?></h1>
                 <p>
-                  Gjeneratorët modernë ofrojnë fuqi të rritur dhe efikasitet të
-                  përmirësuar për furnizim të qëndrueshëm të energjisë
-                  elektrike, duke ulur kostot e operimit. Në forma të
-                  kompaktuara dhe të lehta, ata sigurojnë portabilitet në terren
-                  dhe në ambiente të ndryshme, ndërsa disa modele kanë kapacitet
-                  për të lidhur njëri-tjetrin për të rritur fuqinë e furnizimit.
+                  <?php echo $user['descp'] ?>
                 </p>
               </div>
               <div class="cmimi">
-                <h2>Price:</h2>
-                <h2 class="cmimii">430€</h2>
+                <h2>Cmimi:</h2>
+                <h2 class="cmimii"><?php echo $user['pricep'] ?>€</h2>
               </div>
             </div>
           </div>
-          <div class="card-content">
-            <div class="image">
-              <img src="../../asetet/first.jpg" alt="" />
-            </div>
-            <div class="description">
-              <h1>Gjenerator 100kva 2022</h1>
-              <p>
-                Gjeneratorët modernë ofrojnë fuqi të rritur dhe efikasitet të
-                përmirësuar për furnizim të qëndrueshëm të energjisë elektrike,
-                duke ulur kostot e operimit. Në forma të kompaktuara dhe të
-                lehta, ata sigurojnë portabilitet në terren dhe në ambiente të
-                ndryshme, ndërsa disa modele kanë kapacitet për të lidhur
-                njëri-tjetrin për të rritur fuqinë e furnizimit.
-              </p>
-              <div class="cmimi">
-                <h2>Price:</h2>
-                <h2 class="cmimii">10000€</h2>
-              </div>
-            </div>
-          </div>
-          <div class="card-content">
-            <div class="image">
-              <img src="../../asetet/atv.avif" alt="" />
-            </div>
-            <div class="description">
-              <h1>ATV 300CC 2023</h1>
-              <p>
-                Motorrat ATV me 4 rrota të shkurter ofrojnë gjendshmëri të lartë
-                në terren të vështirë me rrota të mëdha dhe strukturë të
-                qëndrueshme. Përveç fuqisë së tyre të motorit të fuqishëm, ata
-                kanë sisteme të avancuara të frenimit dhe amortizimit për
-                kontroll të mirë në terren të vështirë. Struktura e tyre i bën
-                ata të manovrueshëm dhe ofrojnë mbrojtje të përshtatshme për
-                operatorin, duke u bërë multifunksionalë për shumë përdorime në
-                natyrë, punë në fermë dhe argëtim rekreativ.
-              </p>
-              <div class="cmimi">
-                <h2>Price:</h2>
-                <h2 class="cmimii">1300€</h2>
-              </div>
-            </div>
-          </div>
-          <div class="card-content">
-            <div class="image">
-              <img src="../../asetet/atv2.jpg" alt="" />
-            </div>
-            <div class="description">
-              <h1>ATV 450CC 2023</h1>
-              <p>
-                Motorrat ATV me 4 rrota të shkurter ofrojnë gjendshmëri të lartë
-                në terren të vështirë me rrota të mëdha dhe strukturë të
-                qëndrueshme. Përveç fuqisë së tyre të motorit të fuqishëm, ata
-                kanë sisteme të avancuara të frenimit dhe amortizimit për
-                kontroll të mirë në terren të vështirë. Struktura e tyre i bën
-                ata të manovrueshëm dhe ofrojnë mbrojtje të përshtatshme për
-                operatorin, duke u bërë multifunksionalë për shumë përdorime në
-                natyrë, punë në fermë dhe argëtim rekreativ.
-              </p>
-              <div class="cmimi">
-                <h2>Price:</h2>
-                <h2 class="cmimii">1800€</h2>
-              </div>
-            </div>
-          </div>
-          <div class="card-content">
-            <div class="image">
-              <img src="../../asetet/atv.avif" alt="" />
-            </div>
-            <div class="description">
-              <h1>ATV 250CC 2022</h1>
-              <p>
-                Motorrat ATV me 4 rrota të shkurter ofrojnë gjendshmëri të lartë
-                në terren të vështirë me rrota të mëdha dhe strukturë të
-                qëndrueshme. Përveç fuqisë së tyre të motorit të fuqishëm, ata
-                kanë sisteme të avancuara të frenimit dhe amortizimit për
-                kontroll të mirë në terren të vështirë. Struktura e tyre i bën
-                ata të manovrueshëm dhe ofrojnë mbrojtje të përshtatshme për
-                operatorin, duke u bërë multifunksionalë për shumë përdorime në
-                natyrë, punë në fermë dhe argëtim rekreativ.
-              </p>
-              <div class="cmimi">
-                <h2>Price:</h2>
-                <h2 class="cmimii">1100€</h2>
-              </div>
-            </div>
-          </div>
-          <div class="card-content">
-            <div class="image">
-              <img src="../../asetet/Generator Benzin.jpg" alt="" />
-            </div>
-            <div class="description">
-              <h1>Gjenerator 3.3Kva</h1>
-              <p>
-                Gjeneratorët modernë ofrojnë fuqi të rritur dhe efikasitet të
-                përmirësuar për furnizim të qëndrueshëm të energjisë elektrike,
-                duke ulur kostot e operimit. Në forma të kompaktuara dhe të
-                lehta, ata sigurojnë portabilitet në terren dhe në ambiente të
-                ndryshme, ndërsa disa modele kanë kapacitet për të lidhur
-                njëri-tjetrin për të rritur fuqinë e furnizimit.
-              </p>
-              <div class="cmimi">
-                <h2>Price:</h2>
-                <h2 class="cmimii">200€</h2>
-              </div>
-            </div>
-          </div>
-          <div class="card-content">
-            <div class="image">
-              <img src="../../asetet/generator85.jpg" alt="" />
-            </div>
-            <div class="description">
-              <h1>Gjenerator 8.5Kva</h1>
-              <p>
-                Gjeneratorët modernë ofrojnë fuqi të rritur dhe efikasitet të
-                përmirësuar për furnizim të qëndrueshëm të energjisë elektrike,
-                duke ulur kostot e operimit. Në forma të kompaktuara dhe të
-                lehta, ata sigurojnë portabilitet në terren dhe në ambiente të
-                ndryshme, ndërsa disa modele kanë kapacitet për të lidhur
-                njëri-tjetrin për të rritur fuqinë e furnizimit.
-              </p>
-              <div class="cmimi">
-                <h2>Price:</h2>
-                <h2 class="cmimii">800€</h2>
-              </div>
-            </div>
-          </div>
-          <div class="card-content">
-            <div class="image">
-              <img src="../../asetet/hondaatv.jpg" alt="" />
-            </div>
-            <div class="description">
-              <h1>Motorr Atv Honda</h1>
-              <p>
-                Motorrat ATV me 4 rrota të shkurter ofrojnë gjendshmëri të lartë
-                në terren të vështirë me rrota të mëdha dhe strukturë të
-                qëndrueshme. Përveç fuqisë së tyre të motorit të fuqishëm, ata
-                kanë sisteme të avancuara të frenimit dhe amortizimit për
-                kontroll të mirë në terren të vështirë. Struktura e tyre i bën
-                ata të manovrueshëm dhe ofrojnë mbrojtje të përshtatshme për
-                operatorin, duke u bërë multifunksionalë për shumë përdorime në
-                natyrë, punë në fermë dhe argëtim rekreativ.
-              </p>
-              <div class="cmimi">
-                <h2>Price:</h2>
-                <h2 class="cmimii">4000€</h2>
-              </div>
-            </div>
-          </div>
-        </div>
+        <?php endforeach; ?>
       </div>
-    </main>
-    <footer>
-      <div class="footer">
-        <h3>Copyright © 2023 | Honda Ks - Fushë Kosovë</h3>
-      </div>
-    </footer>
-  </body>
-  <script src="../../Home/menu.js"></script>
+    </div>
+    </div>
+  </main>
+  <footer>
+    <div class="footer">
+      <h3>Copyright © 2023 | Honda Ks - Fushë Kosovë</h3>
+    </div>
+  </footer>
+</body>
+<script src="../../Home/menu.js"></script>
+
 </html>
