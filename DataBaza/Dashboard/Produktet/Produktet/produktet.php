@@ -1,5 +1,4 @@
 <?php
-include('../../../ConfigSession.php');
 require_once "../../../ConnectDB.php";
 
 class GetProduct extends ConnectDB

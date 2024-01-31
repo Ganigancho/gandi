@@ -1,129 +1,271 @@
 * {
-    margin: 0;
-    padding: 0;
-  }
-  body {
-    background: rgb(242, 39, 39);
+  margin: 0;
+  padding: 0;
+}
+.header-mobile{
+  display: none;
+}
+body {
+  background: rgb(242, 39, 39);
+}
+
+.header {
+  background: rgb(242, 39, 39);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 85px;
+  width: 100%;
+  border-bottom: 1px solid white;
+}
+.content-h {
+  margin: 0 100px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.content-h img {
+  width: 80px;
+  height: 70px;
+  border-radius: 50%;
+  margin: 0 10px;
+}
+.content-h ul .home {
+  border-bottom: 2px solid white;
+}
+.home .bi {
+  padding-left: 5px;
+}
+.content-h ul a {
+  text-decoration: none;
+  font-size: 19px;
+  color: white;
+  padding: 10px 25px;
+  margin: 0 20px;
+  border: 3px solid white;
+}
+.useroradmin p {
+  border: 3px solid white;
+  font-size: 19px;
+  color: white;
+  margin-right: 50px;
+  padding: 10px 25px;
+}
+.container {
+  height: calc(100vh - 105px);
+}
+.container .cont {
+  height: calc(100% - 42px);
+  margin: 50px 85px;
+  display: flex;
+}
+.cont .parts {
+  background-color: white;
+  width: 50%;
+  height: auto;
+  border: 4px solid rgb(0, 0, 0);
+  border-radius: 20px;
+  margin: 0 10px;
+  color: rgb(0, 0, 0);
+  text-align: center;
+}
+.info{
+  height: calc(50% - 14px);
+  border-radius: 20px;
+  margin: 4px;
+}
+.n{
+  border-bottom: 4px solid rgb(0, 0, 0);
+}
+.s{
+  border-top: 4px solid rgb(0, 0, 0);
+  overflow-y: scroll;
+}
+.s::-webkit-scrollbar{
+  display: none;
+}
+.card-content {
+  width: auto;
+  height: 580px;
+  margin: 20px;
+  text-align: start;
+}
+.card-content .image {
+  height: 60%;
+  width: 100%;
+  background-color: transparent;
+}
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.content-m .description {
+  padding: 15px;
+  height: calc(50% - 30px);
+  color: white;
+  background-color: rgb(167, 35, 35);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.teksti h1 {
+  text-decoration: underline;
+  padding-bottom: 10px;
+}
+.cmimi h2 {
+  padding-top: 5px;
+}
+.teksti p{
+  font-size: 18px;
+}
+.description .cmimi {
+  display: flex;
+  justify-content: space-between;
+}
+.cmimi .cmimii {
+  border: none;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: rgb(242, 39, 39);
+  border-radius: 4px;
+  color: rgb(255, 255, 255);
+}
+.addprod{
+  color: black;
+  font-size: 27px;
+}
+.coment-m p{
+  padding: 5px 2px;
+  color:rgb(242, 39, 39) ;
+  font-size: 24px;
+  text-align: start;
+}
+.coment-m span , .coment-l span{
+  padding-right:15px;
+  color: black;
+}
+.coment-l{
+  display: flex;
+  justify-content: space-between;
+}
+.coment-l p{
+  padding: 5px 10px;
+  color:rgb(242, 39, 39) ;
+  font-size: 14px;
+  text-align: start;
+  width: 25%;
+}
+@media screen and (max-width: 767px) {
+  .header{
+   display: none;
   }
   .header-mobile {
-    display: none;
-  }
-  .header {
+    display: block;
     background: rgb(242, 39, 39);
+    height: 50px;
+    color: white;
+    transition: all 1s ease-in-out;
+  }
+  /* .up {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+  } */
+  .content-mobile {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    height: 85px;
-    width: 100%;
-    border-bottom: 1px solid white;
-  }
-  .content-h {
-    margin: 0 100px;
-    height: 100%;
-    display: flex;
     align-items: center;
+    margin: 0 10px;
   }
-  
-  .content-h img {
-    width: 80px;
-    height: 70px;
+  .content-mobile img {
+    width: 40px;
+    margin-top: 5px;
     border-radius: 50%;
-    margin: 0 10px;
   }
-  .content-h ul .home {
-    border-bottom: 2px solid white;
-  }
-  .home .bi {
-    padding-left: 5px;
-  }
-  .content-h ul a {
-    text-decoration: none;
-    font-size: 19px;
+  svg {
     color: white;
-    padding: 10px 25px;
-    margin: 0 20px;
-    border: 3px solid white;
   }
-  .useroradmin p {
-    border: 3px solid white;
-    font-size: 19px;
-    color: white;
-    margin-right: 50px;
-    padding: 10px 25px;
-  }
-  .container {
-    height: calc(100vh - 87px);
-  }
-  .container .cont {
-    height: calc(100% - 42px);
-    margin: 50px 85px;
-    display: flex;
-  }
-  .cont .parts {
-    background-color: white;
-    width: 50%;
+  .menu-mobile {
+    background-color: rgb(248, 246, 244);
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.1);
     height: auto;
-    border: 4px solid rgb(0, 0, 0);
-    border-radius: 20px;
-    margin: 0 10px;
-    color: rgb(0, 0, 0);
-    text-align: center;
+    position: fixed;
+    top: 50px;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    display: none;
+    box-shadow: 1px 0.2 black;
   }
-  .info{
-    height: calc(50% - 14px);
-    border: 4px solid rgb(0, 0, 0);
-    border-radius: 20px;
-    margin: 4px;
-  }
-  .card-content {
-    width: auto;
-    height: 580px;
-    margin: 20px;
-    text-align: start;
-  }
-  .card-content .image {
-    height: 60%;
-    width: 100%;
-    background-color: transparent;
-  }
-  .image img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
-  .content-m .description {
-    padding: 15px;
-    height: calc(50% - 30px);
-    color: white;
-    background-color: rgb(167, 35, 35);
+  ul {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    margin-left: 50px;
   }
-  .teksti h1 {
-    text-decoration: underline;
-    padding-bottom: 10px;
+  ul a {
+    text-decoration: none;
+    color: rgb(242, 39, 39);
+    padding: 4px 0;
   }
-  .cmimi h2 {
+  .useroradmin{
+    border: 1px solid red;
+    color: red;
+    text-align: center;
+    width: 150px;
+    margin-bottom: 10px;
+  }
+  .visible {
+    display: block;
+  }
+
+  .container .cont{
+    margin:0;
+    flex-direction: column;
+  }
+  .container .parts{
+    width: 90%;
+    margin-top: 30px;
+    margin-left: 10px;
+  }
+  .card-content{
+    height: auto;
+  }
+  .card-content .image{
+    height: 20%;
+  }
+  .parts{
+    margin-bottom: 40px;
+  }
+  .parts h2{
+    font-size: 15px;
     padding-top: 5px;
   }
+  .teksti h1{
+    font-size: 19px;
+  }
   .teksti p{
-    font-size: 18px;
+    font-size: 11px;
   }
-  .description .cmimi {
-    display: flex;
-    justify-content: space-between;
+ .n{
+    height: auto;
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgb(0, 0, 0);
   }
-  .cmimi .cmimii {
-    border: none;
-    padding: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    background-color: rgb(242, 39, 39);
-    border-radius: 4px;
-    color: rgb(255, 255, 255);
+  .s{
+    border-top: 2px solid rgb(0, 0, 0);
+    height: 200px;
   }
-  .addprod{
-    color: black;
-    font-size: 27px;
+  .s p{
+    font-size: 7px;
   }
+  .coment-m p{
+    font-size: 11px;
+  }
+  
+}
