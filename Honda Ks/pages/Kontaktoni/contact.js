@@ -12,8 +12,4 @@ function submitForm(event) {
       alert("Ju lutem jepni një adresë të vlefshme emaili.");
       return;
     }
-  
-    const message = `Emri: ${firstName}\nMbiemri: ${lastName}\nEmaili: ${email}\nKomenti: ${comment}`;
-  
-    alert(message);
   }
