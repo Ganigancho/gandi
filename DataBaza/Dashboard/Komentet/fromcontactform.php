@@ -1,19 +1,19 @@
 <?php
 require_once "../../ConnectDB.php";
-include('../../ConfigSession.php');
+// include('../../ConfigSession.php');
 
-if (!isset($_SESSION["user_id"])) {
-  header("Location: ../../../Login/login.php");
-  exit();
-}
+// if (!isset($_SESSION["user_id"])) {
+//   header("Location: ../../../Login/login.php");
+//   exit();
+// }
 
-if ($_SESSION['user_role'] != 'admin') {
+// if ($_SESSION['user_role'] != 'admin') {
 
-  header("Location: ../../../Honda Ks/Home/Home.php");
-  exit();
-}
+//   header("Location: ../../../Honda Ks/Home/Home.php");
+//   exit();
+// }
 
-$users = strtoupper($_SESSION['user_role']);
+// $users = strtoupper($_SESSION['user_role']);
 
 class GetComents extends ConnectDB
 {
@@ -57,7 +57,7 @@ $viewComments = $getComents->getComments();
         </ul>
       </div>
       <div class="useroradmin">
-        <p><?php echo $users . " : " . $_SESSION['name'] ?></p>
+        <p>USER</p>
       </div>
     </div>
     <div class="header-mobile" id="mobile-up">
