@@ -1,11 +1,11 @@
 <?php
-// include('../../../DataBaza/ConfigSession.php');
-// // session_start();
+include('../../../DataBaza/ConfigSession.php');
+// session_start();
 
-// if (!isset($_SESSION["user_id"])) {
-//   header("Location: ../../../Login/login.php");
-//   exit();
-// }
+if (!isset($_SESSION["user_id"])) {
+  header("Location: ../../../Login/login.php");
+  exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,7 +37,7 @@
           echo '<a href="../../../DataBaza/Dashboard/Dashboard/dashboard.php">Paneli</a>';
         }
         ?>
-        <a href="../../../Login/login.php?logout=true">Largoju</a>
+        <a href="../../../logout.php">Largoju</a>
       </ul>
     </div>
   </div>
@@ -58,7 +58,7 @@
     </div>
     <div id="menu" class="menu-mobile">
       <input type="search" placeholder="Kerkoni ...." />
-      <ul>
+      <ul id="link-a">
         <a href="../Sherbimet/Sherbimet.php">Sherbimet</a>
         <a href="ContactForm.php">Kontaktoni</a>
         <a href="../Produktet/Produktet.php">Produktet</a>
@@ -67,12 +67,12 @@
           echo '<a class="paneli" href="../../../DataBaza/Dashboard/Dashboard/dashboard.php">Paneli</a>';
         }
         ?>
-        <a class="logimi" href="../../../Login/login.php?logout=true">Largoju</a>
+        <a class="logimi" href="../../../logout.php">Largoju</a>
       </ul>
     </div>
   </div>
 </header>
-<main>
+<main id="close-menu">
   <div class="form">
     <div class="content-f">
       <form action="../../../DataBaza/Dashboard/Komentet/Kontakt Form DB/contactform.srv.php" method="POST">

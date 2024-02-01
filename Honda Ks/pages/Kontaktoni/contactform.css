@@ -107,14 +107,6 @@ textarea {
     background: rgb(242, 39, 39);
     height: 50px;
     color: white;
-    transition: all 1s ease-in-out;
-  }
-  .up {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 9999;
   }
   .content-mobile {
     display: flex;
@@ -165,8 +157,15 @@ textarea {
     color: rgb(242, 39, 39);
     padding: 4px 0;
   }
+  .paneli{
+    border: 1px solid red;
+    width: 60px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+  }
   ul .logimi {
-    width: 90px;
+    width: 50px;
     border: 1px solid white;
     padding: 2px 3px;
     background: black;
@@ -183,9 +182,6 @@ textarea {
   }
   .form{
     margin: 0;
-  }
-  .mg-t{
-    margin-top: 50px;
   }
   .content-f{
     margin: 0 20px;

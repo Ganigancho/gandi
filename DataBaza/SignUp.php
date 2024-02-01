@@ -34,4 +34,12 @@ class Signup extends ConnectDB
         $stmt->bindParam(":passw", $this->passw);
         $stmt->execute();
     }
+    public function setUserRole($role)
+    {
+        $query = "UPDATE users SET role = :role WHERE username = :username";
+        $stmt = $this->connect()->prepare($query);
+        $stmt->bindParam(":role", $role);
+        $stmt->bindParam(":username", $this->username);
+        $stmt->execute();
+    }
 }

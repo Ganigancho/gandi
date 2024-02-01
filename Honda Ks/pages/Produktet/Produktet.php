@@ -1,11 +1,22 @@
 <?php
+
+include('../../../DataBaza/ConfigSession.php');
+// session_start();
+
+if (!isset($_SESSION["user_id"])) {
+  header("Location: ../../../Login/login.php");
+  exit();
+}
+?>
+<?php
+
 require_once "../../../DataBaza/ConnectDB.php";
 
 class GetProduct extends ConnectDB
 {
   public function getProds()
   {
-    $query = "SELECT * FROM products";
+    $query = "SELECT * FROM productss";
     $stmt = $this->connect()->prepare($query);
     $stmt->execute();
 
@@ -49,8 +60,12 @@ $usersData = $getProd->getProds();
         </ul>
         <input type="text" placeholder="Kerkoni ...." />
         <ul>
-          <a href="../../../DataBaza/Dashboard/Dashboard/dashboard.php">Paneli</a>
-          <a href="../../../Login/login.php?logout=true">Largoju</a>
+          <?php
+          if (isset($_SESSION['user_role']) && $_SESSION['user_role'] === 'admin') {
+            echo '<a href="../../../DataBaza/Dashboard/Dashboard/dashboard.php">Paneli</a>';
+          }
+          ?>
+          <a href="../../../logout.php">Largoju</a>
         </ul>
       </div>
     </div>
@@ -71,16 +86,20 @@ $usersData = $getProd->getProds();
       </div>
       <div id="menu" class="menu-mobile">
         <input type="search" placeholder="Kerkoni ...." />
-        <ul>
+        <ul id="link-a">
           <a href="../Sherbimet/Sherbimet.php">Sherbimet</a>
           <a href="../Kontaktoni/ContactForm.php">Kontaktoni</a>
-          <a href="Produktet.php">Produktet</a>
-          <a class="logimi" href="../../../Login/login.php">Dil nga Faqja</a>
+          <?php
+          if (isset($_SESSION['user_role']) && $_SESSION['user_role'] === 'admin') {
+            echo '<a class="paneli" href="../../../DataBaza/Dashboard/Dashboard/dashboard.php">Paneli</a>';
+          }
+          ?>
+          <a class="logimi" href="../../../logout.php">Largoju</a>
         </ul>
       </div>
     </div>
   </header>
-  <main>
+  <main id="close-menu">
     <div class="main">
       <div class="assprod">
         <?php
@@ -108,6 +127,14 @@ $usersData = $getProd->getProds();
                 <h2 class="cmimii"><?php echo $user['pricep'] ?>€</h2>
               </div>
             </div>
+            <?php
+            if (isset($_SESSION['user_role']) && $_SESSION['user_role'] === 'admin') {
+              echo '<div class="butonath">';
+              echo '<a href="../../../DataBaza/Dashboard/Produktet/UpdateProd/updateProd.php?updateprod=' . $user['id'] . '">Edit</a>';
+              echo '<a href="../../../DataBaza/Dashboard/Produktet/DeleteProd/delete.php?deleteid=' . $user['id'] . '">Delete</a>';
+              echo '</div>';
+            }
+            ?>
           </div>
         <?php endforeach; ?>
       </div>

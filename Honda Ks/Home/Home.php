@@ -1,10 +1,13 @@
 <?php
 include('../../DataBaza/ConfigSession.php');
 
-// if (!isset($_SESSION["user_id"])) {
-//   header("Location: ../../Login/login.php");
-//   exit();
-// }
+if (!isset($_SESSION["user_id"])) {
+  header("Location: ../../Login/login.php");
+  exit();
+}
+
+$users= strtoupper($_SESSION['user_role']);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,9 +37,13 @@ include('../../DataBaza/ConfigSession.php');
         </ul>
         <input type="text" placeholder="Kerkoni ...." />
         <ul class="ulja">
-          <a href="../../DataBaza/Dashboard/Dashboard/dashboard.php">Paneli</a>
-          <a href="../../Login/login.php?logout=true">Largoju</a>
-          <a class="user">User</a>
+          <?php
+          if (isset($_SESSION['user_role']) && $_SESSION['user_role'] === 'admin') {
+            echo '<a href="../../DataBaza/Dashboard/Dashboard/dashboard.php">Paneli</a>';
+          }
+          ?>
+          <a href="../../logout.php">Largoju</a>
+          <a class="user"><?php echo $users ." : ". $_SESSION['name'] ?></a>
         </ul>
       </div>
     </div>
@@ -49,16 +56,24 @@ include('../../DataBaza/ConfigSession.php');
             <g transform="scale(5.12,5.12)">
               <path d="M3,8c-0.72127,-0.0102 -1.39216,0.36875 -1.75578,0.99175c-0.36361,0.623 -0.36361,1.39351 0,2.01651c0.36361,0.623 1.0345,1.00195 1.75578,0.99175h44c0.72127,0.0102 1.39216,-0.36875 1.75578,-0.99175c0.36361,-0.623 0.36361,-1.39351 0,-2.01651c-0.36361,-0.623 -1.0345,-1.00195 -1.75578,-0.99175zM3,23c-0.72127,-0.0102 -1.39216,0.36875 -1.75578,0.99175c-0.36361,0.623 -0.36361,1.39351 0,2.01651c0.36361,0.623 1.0345,1.00195 1.75578,0.99175h44c0.72127,0.0102 1.39216,-0.36875 1.75578,-0.99175c0.36361,-0.623 0.36361,-1.39351 0,-2.01651c-0.36361,-0.623 -1.0345,-1.00195 -1.75578,-0.99175zM3,38c-0.72127,-0.0102 -1.39216,0.36875 -1.75578,0.99175c-0.36361,0.623 -0.36361,1.39351 0,2.01651c0.36361,0.623 1.0345,1.00195 1.75578,0.99175h44c0.72127,0.0102 1.39216,-0.36875 1.75578,-0.99175c0.36361,-0.623 0.36361,-1.39351 0,-2.01651c-0.36361,-0.623 -1.0345,-1.00195 -1.75578,-0.99175z"></path>
             </g>
-          </g>
+          </g> 
         </svg>
       </div>
       <div id="menu" class="menu-mobile">
         <input type="search" placeholder="Kerkoni ...." />
-        <ul>
+        <ul id="link-a">
           <a href="../pages/Sherbimet/Sherbimet.php">Sherbimet</a>
           <a href="../pages/Kontaktoni/ContactForm.php">Kontaktoni</a>
           <a href="../pages/Produktet/Produktet.php">Produktet</a>
-          <a class="logimi" href="../../Login/login.php">Dil nga Faqja</a>
+          <?php
+          if (isset($_SESSION['user_role']) && $_SESSION['user_role'] === 'admin') {
+            echo '<a class="paneli" href="../../DataBaza/Dashboard/Dashboard/dashboard.php">Paneli</a>';
+          }
+          ?>
+          <div class="menu-user">
+          <a class="user"><?php echo $users ." : ". $_SESSION['name'] ?></a>
+          <a class="logimi" href="../../logout.php">Largoju</a>
+          </div>
         </ul>
       </div>
     </div>

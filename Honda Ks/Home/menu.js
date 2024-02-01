@@ -1,6 +1,7 @@
 const toggleMenu = document.getElementById("menu");
 const menuVisible = document.getElementById("menu-visible");
 const closeMenu = document.getElementById("close-menu");
+const ClickLinkCloseMenu = document.getElementById("link-a")
 const MOBILE_UP = document.getElementById("mobile-up");
 const bgMargin = document.getElementById("margin-top");
 
@@ -8,10 +9,15 @@ const toggle = () => {
   toggleMenu.classList.toggle("visible");
 };
 menuVisible.addEventListener("click", toggle);
+
 const closeMenuMain = () => {
   toggleMenu.classList.remove("visible");
 };
+
 closeMenu.addEventListener("touchmove", closeMenuMain);
+
+ClickLinkCloseMenu.addEventListener("click",closeMenuMain)
+
 closeMenu.addEventListener("click", closeMenuMain);
 
 const mobileUp = () => {
@@ -36,7 +42,7 @@ window.addEventListener("scroll", function () {
     mobileUp();
   }
   if (currentScroll <= 0) {
-    mobileDown();
+    mobileUp();
   }
   lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
 });

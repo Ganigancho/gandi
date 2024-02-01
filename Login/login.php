@@ -1,8 +1,3 @@
-<?php 
-include('../DataBaza/ConfigSession.php');
-
-session_destroy();
-?>
 <!DOCTYPE html>
 <html lang="en">
 

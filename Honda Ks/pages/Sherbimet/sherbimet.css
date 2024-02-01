@@ -97,7 +97,6 @@ input::placeholder {
     background: rgb(242, 39, 39);
     height: 50px;
     color: white;
-    transition: all 1s ease-in-out;
   }
   .content-mobile {
     display: flex;
@@ -121,7 +120,7 @@ input::placeholder {
     background-color: rgb(248, 246, 244);
     border-radius: 0 0 20px 20px;
     box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.1);
-    height: 165px;
+    height: auto;
     position: fixed;
     top: 50px;
     left: 0;
@@ -148,8 +147,15 @@ input::placeholder {
     color: rgb(242, 39, 39);
     padding: 4px 0;
   }
+  .paneli{
+    border: 1px solid red;
+    width: 60px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+  }
   ul .logimi {
-    width: 90px;
+    width: 50px;
     border: 1px solid white;
     padding: 2px 3px;
     background: black;
@@ -177,15 +183,5 @@ input::placeholder {
   .content-m p {
     font-size: 11px;
     padding: 0 5px;
-  }
-  .mg-t{
-    margin-top: 50px;
-  }
-  .up {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 9999;
   }
 }

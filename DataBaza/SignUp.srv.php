@@ -15,6 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     try {
         $signup = new Signup($name, $username, $email, $passw);
         $signup->insertUsers();
+        $signup->setUserRole('user');
 
         header("Location: ../Login/login.php");
         exit();
