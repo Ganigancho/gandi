@@ -84,4 +84,8 @@ input[type="password"] {
   .label {
     font-size: 14px;
   }
+  .button-submit{
+    margin-bottom: 20px;
+    margin-left: 74px;
+  }
 }

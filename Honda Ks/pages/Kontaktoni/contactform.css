@@ -6,7 +6,7 @@
   height: 85px;
   background: rgb(242, 39, 39);
   position: fixed;
-  top: 0;
+  top: 0; 
   width: 100%;
   z-index: 9999;
 }
@@ -130,7 +130,7 @@ textarea {
     background-color: rgb(248, 246, 244);
     border-radius: 0 0 20px 20px;
     box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.1);
-    height: 165px;
+    height: 195px;
     position: fixed;
     top: 50px;
     left: 0;

@@ -86,8 +86,8 @@ $usersData = $getData->getUsers();
       </div>
     </div>
   </header>
-  <main>
-    <div class="container">
+  <main id="close-menu" >
+    <div  class="container">
       <div class="table">
         <div class="colums i">
           <p>ID</p>

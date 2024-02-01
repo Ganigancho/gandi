@@ -14,7 +14,7 @@ if ($_SESSION['user_role'] != 'admin') {
   exit();
 }
 
-$users = strtoupper($_SESSION['user_role']);
+$users = strtoupper($_SESSION['user_role']); 
 
 class GetData extends ConnectDB
 {
@@ -182,5 +182,4 @@ $lastLogged = array_reverse($getLastLogin);
   </main>
 </body>
 <script src="../../../Honda Ks/Home/menu.js"></script>
-
 </html>
