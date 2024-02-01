@@ -1,6 +1,16 @@
 <?php
+include('../../../ConfigSession.php');
 
-$whoAdd = "ANDI";
+if (!isset($_SESSION["user_id"])) {
+  header("Location: ../../../../Login/login.php?login");
+  exit();
+}
+if ($_SESSION['user_role'] != 'admin') {
+
+  header("Location: ../../../Honda Ks/Home/Home.php");
+  exit();
+}
+$whoAdd = $_SESSION["name"];
 
 ?>
 <html lang="en">
@@ -17,7 +27,7 @@ $whoAdd = "ANDI";
     <div class="login">
       <div class="login-form">
         <div class="logo">
-          <img src="../../Users/Users/logo.jpg" alt="" />
+          <img src="../../../../Honda Ks/asetet/logo.jpg" alt="" />
         </div>
         <div class="form">
           <form action="../CRUD Produkteve/prod.srv.php" method="POST" enctype="multipart/form-data">

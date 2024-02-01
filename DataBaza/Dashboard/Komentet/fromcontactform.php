@@ -1,19 +1,19 @@
 <?php
 require_once "../../ConnectDB.php";
-// include('../../ConfigSession.php');
+include('../../ConfigSession.php');
 
-// if (!isset($_SESSION["user_id"])) {
-//   header("Location: ../../../Login/login.php");
-//   exit();
-// }
+if (!isset($_SESSION["user_id"])) {
+  header("Location: ../../../Login/login.php");
+  exit();
+}
 
-// if ($_SESSION['user_role'] != 'admin') {
+if ($_SESSION['user_role'] != 'admin') {
 
-//   header("Location: ../../../Honda Ks/Home/Home.php");
-//   exit();
-// }
+  header("Location: ../../../Honda Ks/Home/Home.php");
+  exit();
+}
 
-// $users = strtoupper($_SESSION['user_role']);
+$users = strtoupper($_SESSION['user_role']);
 
 class GetComents extends ConnectDB
 {
@@ -57,12 +57,12 @@ $viewComments = $getComents->getComments();
         </ul>
       </div>
       <div class="useroradmin">
-        <p>USER</p>
+        <p><?php echo $users . " : " . $_SESSION['name'] ?></p>
       </div>
     </div>
     <div class="header-mobile" id="mobile-up">
       <div class="content-mobile">
-        <img src="../../../Honda Ks/asetet/logo.jpg" alt="" />
+      <img src="../../../Honda Ks/asetet/logo.jpg" alt="" />
         <h2>Honda KS</h2>
         <svg id="menu-visible" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0,0,256,256">
           <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
@@ -73,16 +73,13 @@ $viewComments = $getComents->getComments();
         </svg>
       </div>
       <div id="menu" class="menu-mobile">
-        <ul>
-          <a href="../pages/Sherbimet/Sherbimet.php">Sherbimet</a>
-          <a href="../pages/Kontaktoni/ContactForm.php">Kontaktoni</a>
-          <a href="../pages/Produktet/Produktet.php">Produktet</a>
-          <a class="logimi" href="../../Login/login.php">FAQJA</a>
+        <ul id="link-a">
+          <a href="../Dashboard/dashboard.php">PANELI</a>
         </ul>
       </div>
     </div>
   </header>
-  <main>
+  <main id="close-menu">
     <div id="container" class="container">
       <div class="table">
         <div class="colums i">
@@ -111,4 +108,5 @@ $viewComments = $getComents->getComments();
     </div>
   </main>
 </body>
+<script src="../../../Honda Ks/Home/menu.js"></script>
 </html>
