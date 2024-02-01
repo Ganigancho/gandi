@@ -1,5 +1,19 @@
 <?php
 require_once "../../../ConnectDB.php";
+include('../../../ConfigSession.php');
+
+if (!isset($_SESSION["user_id"])) {
+  header("Location: ../../../../../Login/login.php");
+  exit();
+}
+
+if ($_SESSION['user_role'] != 'admin') {
+
+  header("Location: ../../../../../Honda Ks/Home/Home.php");
+  exit();
+}
+
+$users = strtoupper($_SESSION['user_role']);
 
 class GetComents extends ConnectDB
 {
@@ -43,6 +57,7 @@ $viewComment = $getComment->viewFullComment();
       <div id="modal" class="modal">
         <div class="content-m">
           <div class="coment-m">
+            <p>Dërguar me: <?php echo $viewComment['create_data']; ?></p>
             <p>Emri: <span><?php echo $viewComment['name']; ?></span></p>
             <p>Mbiemri: <span><?php echo $viewComment['surname']; ?></span></p>
             <p>Email: <span><?php echo $viewComment['email']; ?></span></p>

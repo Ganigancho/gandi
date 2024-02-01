@@ -1,5 +1,11 @@
 <?php
 require_once '../../../ConnectDB.php';
+include('../../../ConfigSession.php');
+
+if (!isset($_SESSION["user_id"])) {
+  header("Location: ../../../../Login/login.php");
+  exit(); 
+}
 
 class DeleteIdProd extends ConnectDB
 {
@@ -19,6 +25,9 @@ class DeleteIdProd extends ConnectDB
 $deleteId = new DeleteIdProd();
 $deleteId->deleteId();
 
-header("Location: ../Produktet/produktet.php");
+header("Location: ../../../../Honda Ks/pages/Produktet/Produktet.php");
 
 exit();
+
+?>
+

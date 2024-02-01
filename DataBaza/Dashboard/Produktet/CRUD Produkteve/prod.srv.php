@@ -32,7 +32,7 @@ class AddProduct extends ConnectDB
     $uploadPath = $uploadFolder . basename($this->imagep['name']);
     move_uploaded_file($this->imagep['tmp_name'], $uploadPath);
 
-    $query = "INSERT INTO productss (imagep, titlep, descp, pricep ,whoadd) VALUES (:image, :title, :description, :price,:whoadd)";
+    $query = "INSERT INTO products (imagep, titlep, descp, pricep ,whoadd) VALUES (:image, :title, :description, :price,:whoadd)";
     $stmt = $conn->prepare($query);
 
     $stmt->bindParam(':image', $uploadPath, PDO::PARAM_STR);

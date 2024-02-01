@@ -1,5 +1,18 @@
 <?php
+include('../../../ConfigSession.php');
 require_once "../../../ConnectDB.php";
+
+if (!isset($_SESSION["user_id"])) {
+  header("Location: ../../../../Login/login.php");
+  exit();
+}
+if ($_SESSION['user_role'] != 'admin') {
+
+  header("Location: ../../../Honda Ks/Home/Home.php");
+  exit();
+}
+
+$users = strtoupper($_SESSION['user_role']);
 
 class GetProduct extends ConnectDB
 {
@@ -35,7 +48,7 @@ $usersData = $getProd->getProds();
   <header>
     <div class="header">
       <div class="content-h">
-        <img src="../../Users/Users/logo.jpg" alt="" />
+        <img src="../../../../Honda Ks/asetet/logo.jpg" alt="" />
         <ul>
           <a class="home" href="../../../../Honda Ks/Home/Home.php">
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="18" fill="white" class="bi bi-house-door-fill" viewBox="0 0 16 16">
@@ -47,12 +60,12 @@ $usersData = $getProd->getProds();
         </ul>
       </div>
       <div class="useroradmin">
-        <p>USER</p>
+        <p><?php echo $users . " : " . $_SESSION['name'] ?></p>
       </div>
     </div>
     <div class="header-mobile" id="mobile-up">
       <div class="content-mobile">
-        <img src="../asetet/logo.jpg" alt="" />
+        <img src="../../../../Honda Ks/asetet/logo.jpg" alt="" />
         <h2>Honda KS</h2>
         <svg id="menu-visible" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0,0,256,256">
           <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
@@ -63,16 +76,13 @@ $usersData = $getProd->getProds();
         </svg>
       </div>
       <div id="menu" class="menu-mobile">
-        <ul>
-          <a href="../pages/Sherbimet/Sherbimet.php">Sherbimet</a>
-          <a href="../pages/Kontaktoni/ContactForm.php">Kontaktoni</a>
-          <a href="../pages/Produktet/Produktet.php">Produktet</a>
-          <a class="logimi" href="../../Login/login.php">FAQJA</a>
+        <ul id="link-a">
+          <a href="../../Dashboard/dashboard.php">PANELI</a>
+          <a href="../AddProdPath/addprod.php">SHTO PRODUKTET</a>
         </ul>
       </div>
     </div>
-  </header>
-  <main>
+  <main id="close-menu">
     <div class="container">
       <div class="table">
         <div class="colums i">
@@ -104,5 +114,5 @@ $usersData = $getProd->getProds();
     </div>
   </main>
 </body>
-
+<script src="../../../../Honda Ks/Home/menu.js"></script>
 </html>
