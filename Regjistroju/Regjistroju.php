@@ -56,7 +56,7 @@
             </div>
             <div class="have-acc">
               <p>
-                Ju keni nje llogari.
+                Ju keni nje llogari...
                 <a href="../Login/login.php">Logoju</a>
               </p>
             </div>
