@@ -1,103 +1,179 @@
 * {
-    margin: 0;
-    padding: 0;
-  }
-  body{
-      background: rgb(242, 39, 39);
-  }
-  .header-mobile {
-    display: none;
-  }
-  .header {
+  margin: 0;
+  padding: 0;
+}
+body{
     background: rgb(242, 39, 39);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 85px;
+}
+.header-mobile {
+  display: none;
+}
+.header {
+  background: rgb(242, 39, 39);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 85px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  border-bottom: 1px solid white;
+}
+.content-h {
+  margin: 0 100px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.content-h img {
+  width: 80px;
+  height: 70px;
+  border-radius: 50%;
+  margin: 0 10px;
+}
+.content-h ul .home {
+  border-bottom: 2px solid white;
+}
+.home .bi {
+  padding-left: 5px;
+}
+.content-h ul a {
+  text-decoration: none;
+  font-size: 19px;
+  color: white;
+  padding: 10px 25px;
+  margin: 0 20px;
+  border: 3px solid white;
+}
+.useroradmin p {
+  border: 3px solid white;
+  font-size: 19px;
+  color: white;
+  margin-right: 50px;
+  padding: 10px 25px;
+}
+.container {
+    height: auto;
     width: 100%;
-    position: fixed;
-    top: 0;
-    z-index: 9999;
-    border-bottom: 1px solid white;
+    margin: 105px 0;
   }
-  .content-h {
-    margin: 0 100px;
-    height: 100%;
+  .table{
+    height: auto;
+    margin: 0 50px;
+    border: 3px solid white;
+  }
+  .colums{
     display: flex;
+    color: rgb(255, 255, 255);
+    border: 3px solid rgb(255, 255, 255);
     align-items: center;
+    justify-content: space-around;
+    margin: 20px 10px;
+    font-size: 17px;
   }
-  
-  .content-h img {
-    width: 80px;
-    height: 70px;
-    border-radius: 50%;
-    margin: 0 10px;
+  .colums p{
+    width: 12.5%;
+    border: 1px solid white;
+    text-align: center;
+    margin: 5px 0;
   }
-  .content-h ul .home {
-    border-bottom: 2px solid white;
+
+  .i{
+    font-size: 22px;
+    background:white ;
+    text-decoration: underline;
+    padding: 10px 0;
+    color: rgb(150, 26, 26);
+    position: sticky;
+    top: 100px;
   }
-  .home .bi {
-    padding-left: 5px;
-  }
-  .content-h ul a {
+  .colums .butonat a{
+    padding: 0 10px;
     text-decoration: none;
-    font-size: 19px;
-    color: white;
-    padding: 10px 25px;
-    margin: 0 20px;
-    border: 3px solid white;
+    background: blue;
+    border: 1px solid white;
+    color: rgb(255, 255, 255);
   }
-  .useroradmin p {
-    border: 3px solid white;
-    font-size: 19px;
-    color: white;
-    margin-right: 50px;
-    padding: 10px 25px;
+
+  .colums .butonat a:nth-child(2){
+    background: rgb(242, 171, 5);
+  
   }
-  .container {
+  @media screen and (max-width: 767px) {
+    .header{
+     display: none;
+    }
+    .header-mobile {
+      display: block;
+      background: rgb(242, 39, 39);
+      height: 50px;
+      color: white;
+      transition: all 1s ease-in-out;
+  
+    }
+    /* .up {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 9999;
+    } */
+    .content-mobile {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0 10px;
+    }
+    .content-mobile img {
+      width: 40px;
+      margin-top: 5px;
+      border-radius: 50%;
+    }
+    svg {
+      color: white;
+    }
+    .menu-mobile {
+      background-color: rgb(248, 246, 244);
+      border-radius: 0 0 20px 20px;
+      box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.1);
       height: auto;
-      width: 100%;
-      margin: 105px 0;
+      position: fixed;
+      top: 50px;
+      left: 0;
+      right: 0;
+      z-index: 9999;
+      display: none;
+    }
+    ul {
+      display: flex;
+      flex-direction: column;
+      margin-left: 50px;
+    }
+    ul a {
+      text-decoration: none;
+      color: rgb(242, 39, 39);
+      padding: 4px 0;
+    }
+    .visible {
+      display: block;
+    } 
+    .container{
+      margin: 30px 0;
     }
     .table{
-      height: auto;
-      margin: 0 50px;
-      border: 3px solid white;
+      margin: 0 10px;
     }
     .colums{
-      display: flex;
-      color: rgb(255, 255, 255);
-      border: 3px solid rgb(255, 255, 255);
-      align-items: center;
-      justify-content: space-around;
-      margin: 20px 10px;
-      font-size: 17px;
+      font-size: 4px;
+      margin: 10px 5px;
     }
-    .colums p{
-      width: 12.5%;
-      border: 1px solid white;
-      text-align: center;
-      margin: 5px 0;
-    }
-  
     .i{
-      font-size: 22px;
-      background:white ;
-      text-decoration: underline;
-      padding: 10px 0;
-      color: rgb(150, 26, 26);
-      position: sticky;
-      top: 100px;
+      position: unset;
+      padding: 2px 0;
     }
-    .colums .butonat a{
-      padding: 0 10px;
-      text-decoration: none;
-      background: blue;
-      border: 1px solid white;
-      color: rgb(255, 255, 255);
+    .colums .butonat{
+      display: flex;
     }
-  
-    .colums .butonat a:nth-child(2){
-      background: rgb(242, 171, 5);
-    
-    }
+  }

@@ -3,7 +3,7 @@ include('../../../DataBaza/ConfigSession.php');
 // session_start();
 
 if (!isset($_SESSION["user_id"])) {
-  header("Location: ../../../Login/login.php");
+  header("../../../logout.php");
   exit();
 }
 ?>
@@ -11,6 +11,7 @@ if (!isset($_SESSION["user_id"])) {
 <html lang="en">
 
 <head>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="sherbimet.css" />
@@ -39,7 +40,7 @@ if (!isset($_SESSION["user_id"])) {
             echo '<a href="../../../DataBaza/Dashboard/Dashboard/dashboard.php">Paneli</a>';
           }
           ?>
-          <a href="../../../Login/login.php">Largoju</a>
+          <a href="../../../logout.php">Largoju</a>
         </ul>
       </div>
     </div>
@@ -69,7 +70,7 @@ if (!isset($_SESSION["user_id"])) {
             echo '<a class="paneli" href="../../../DataBaza/Dashboard/Dashboard/dashboard.php">Paneli</a>';
           }
           ?>
-          <a class="logimi" href="../../../Login/login.php">Largoju</a>
+          <a class="logimi" href="../../../logout.php">Largoju</a>
         </ul>
       </div>
     </div>

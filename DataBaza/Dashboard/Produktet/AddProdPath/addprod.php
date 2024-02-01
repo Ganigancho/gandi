@@ -2,7 +2,7 @@
 include('../../../ConfigSession.php');
 
 if (!isset($_SESSION["user_id"])) {
-  header("Location: ../../../../Login/login.php?login");
+  header("Location: ../../../../logout.php");
   exit();
 }
 if ($_SESSION['user_role'] != 'admin') {

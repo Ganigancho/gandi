@@ -3,9 +3,18 @@ require_once "../../../ConnectDB.php";
 include('../../../ConfigSession.php');
 
 if (!isset($_SESSION["user_id"])) {
-  header("Location: ../../../../Login/login.php");
+  header("Location: ../../../../logout.php");
   exit();
 }
+
+if ($_SESSION['user_role'] != 'admin') {
+
+  header("Location: ../../../../Honda Ks/Home/Home.php");
+  exit();
+}
+
+$users = strtoupper($_SESSION['user_role']);
+
 
 class GetData extends ConnectDB
 {
@@ -27,7 +36,6 @@ $getData = new GetData();
 
 $usersData = $getData->getUsers();
 
-
 ?>
 
 <html lang="en">
@@ -43,7 +51,7 @@ $usersData = $getData->getUsers();
   <header>
     <div class="header">
       <div class="content-h">
-        <img src="./logo.jpg" alt="" />
+        <img src="../../../../Honda Ks/asetet/logo.jpg" alt="" />
         <ul>
           <a class="home" href="../../../../Honda Ks/Home/Home.php">
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="18" fill="white" class="bi bi-house-door-fill" viewBox="0 0 16 16">
@@ -60,7 +68,7 @@ $usersData = $getData->getUsers();
     </div>
     <div class="header-mobile" id="mobile-up">
       <div class="content-mobile">
-        <img src="../asetet/logo.jpg" alt="" />
+        <img src="../../../../Honda Ks/asetet/logo.jpg" alt="" />
         <h2>Honda KS</h2>
         <svg id="menu-visible" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0,0,256,256">
           <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
@@ -71,11 +79,9 @@ $usersData = $getData->getUsers();
         </svg>
       </div>
       <div id="menu" class="menu-mobile">
-        <ul>
-          <a href="../pages/Sherbimet/Sherbimet.php">Sherbimet</a>
-          <a href="../pages/Kontaktoni/ContactForm.php">Kontaktoni</a>
-          <a href="../pages/Produktet/Produktet.php">Produktet</a>
-          <a class="logimi" href="../../Login/login.php">FAQJA</a>
+        <ul id="link-a">
+          <a href="../../Dashboard/dashboard.php">PANELI</a>
+          <a href="../Add/addUser.php">SHTO PËRDORUESIN ADMIN</a>
         </ul>
       </div>
     </div>
@@ -89,6 +95,7 @@ $usersData = $getData->getUsers();
           <p>E.User</p>
           <p>Emaili</p>
           <p>Fjalëkalimi</p>
+          <p>Rolet</p>
           <p>Koha</p>
           <p>Funksionet</p>
         </div>
@@ -99,6 +106,7 @@ $usersData = $getData->getUsers();
             <p><?php echo $user['username']; ?></p>
             <p><?php echo $user['email']; ?></p>
             <p><?php echo substr($user['passw'], 0, 12); ?></p>
+            <p><?php echo $user['role']; ?></p>
             <p><?php echo $user['create_data']; ?></p>
             <div class="butonat">
               <a href="../Update/update.php?updateid=<?php echo $user['id']; ?>">Edit</a>
@@ -110,5 +118,6 @@ $usersData = $getData->getUsers();
     </div>
   </main>
 </body>
+<script src="../../../../Honda Ks/Home/menu.js"></script>
 
 </html>

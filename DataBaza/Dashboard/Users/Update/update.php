@@ -2,10 +2,10 @@
 require_once '../../../ConnectDB.php';
 include('../../../ConfigSession.php');
 
-// if (!isset($_SESSION["user_id"])) {
-//   header("Location: ../../../../Login/login.php");
-//   exit(); 
-// }
+if (!isset($_SESSION["user_id"])) {
+  header("Location: ../../../../logout.php");
+  exit(); 
+}
 
 class UpdateId extends ConnectDB
 {
@@ -63,7 +63,7 @@ $updateId->updateId();
     <div class="login">
       <div class="login-form">
         <div class="logo">
-          <img src="../Users/logo.jpg" alt="" />
+          <img src="../../../../Honda Ks/asetet/logo.jpg" alt="" />
         </div>
         <div class="form">
           <form method="POST">

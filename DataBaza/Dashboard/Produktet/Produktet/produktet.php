@@ -3,7 +3,7 @@ include('../../../ConfigSession.php');
 require_once "../../../ConnectDB.php";
 
 if (!isset($_SESSION["user_id"])) {
-  header("Location: ../../../../Login/login.php");
+  header("Location: ../../../../logout.php");
   exit();
 }
 if ($_SESSION['user_role'] != 'admin') {

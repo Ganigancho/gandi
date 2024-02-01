@@ -1,22 +1,18 @@
 <?php
-
+require_once "../../../DataBaza/ConnectDB.php";
 include('../../../DataBaza/ConfigSession.php');
 // session_start();
 
 if (!isset($_SESSION["user_id"])) {
-  header("Location: ../../../Login/login.php");
+  header("Location: ../../../logout.php");
   exit();
 }
-?>
-<?php
-
-require_once "../../../DataBaza/ConnectDB.php";
 
 class GetProduct extends ConnectDB
 {
   public function getProds()
   {
-    $query = "SELECT * FROM productss";
+    $query = "SELECT * FROM products";
     $stmt = $this->connect()->prepare($query);
     $stmt->execute();
 

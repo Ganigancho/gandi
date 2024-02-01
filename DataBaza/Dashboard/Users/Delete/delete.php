@@ -1,20 +1,13 @@
 <?php
 require_once '../../../ConnectDB.php';
-include('../../../ConfigSession.php');
 
-if (!isset($_SESSION["user_id"])) {
-  header("Location: ../../../../Login/login.php");
-  exit(); 
-}
-
-class DeleteIdProd extends ConnectDB
+class DeleteId extends ConnectDB
 {
     public function deleteId()
     {
         if (isset($_GET['deleteid'])) {
             $id = $_GET['deleteid'];
-            // echo "Eshte Fshire useri me ID: $id";
-            $query = "DELETE FROM productss WHERE id = :id";
+            $query = "DELETE FROM users WHERE id = :id";
             $stmt = $this->connect()->prepare($query);
             $stmt->bindParam(":id", $id, PDO::PARAM_INT);
             $stmt->execute();
@@ -22,12 +15,9 @@ class DeleteIdProd extends ConnectDB
     }
 }
 
-$deleteId = new DeleteIdProd();
+$deleteId = new DeleteId();
 $deleteId->deleteId();
 
-header("Location: ../../../../Honda Ks/pages/Produktet/Produktet.php");
+header("Location: ../Users/UsersList.php");
 
 exit();
-
-?>
-
