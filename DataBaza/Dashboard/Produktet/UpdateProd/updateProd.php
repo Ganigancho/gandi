@@ -1,5 +1,16 @@
 <?php
 require_once '../../../ConnectDB.php';
+include('../../../ConfigSession.php');
+
+if (!isset($_SESSION["user_id"])) {
+    header("Location: ../../../../Login/login.php");
+    exit();
+}
+
+if ($_SESSION['user_role'] != 'admin') {
+    header("Location: ../../../Honda Ks/Home/Home.php");
+    exit();
+}
 
 class UpdateProd extends ConnectDB
 {
@@ -13,12 +24,11 @@ class UpdateProd extends ConnectDB
             $descp = $_POST['descp'];
             $pricep = $_POST['pricep'];
             $uploadFolder = 'asetet/';
-            
-            
+    
             if (!file_exists($uploadFolder) && !is_dir($uploadFolder)) {
                 mkdir($uploadFolder);
             }
-            
+    
             if (!empty($imagep['name'])) {
                 $path_parts = pathinfo($imagep['name']);
                 $filename = $path_parts['filename'];
@@ -91,7 +101,7 @@ $existingDetails = $updateProd->getLastProd($id);
         <div class="login">
             <div class="login-form">
                 <div class="logo">
-                    <img src="../../Users/Users/logo.jpg" alt="" />
+                    <img src="../../../../Honda Ks/asetet/logo.jpg" alt="" />
                 </div>
                 <div class="form">
                     <form method="POST" enctype="multipart/form-data">

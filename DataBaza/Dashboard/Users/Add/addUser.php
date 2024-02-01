@@ -2,6 +2,16 @@
 require_once "../../../SignUp.php";
 include('../../../ConfigSession.php');
 
+if (!isset($_SESSION["user_id"])) {
+  header("Location: ../../../../Login/login.php");
+  exit();
+}
+if ($_SESSION['user_role'] != 'admin') {
+
+  header("../../../../Honda Ks/Home/Home.php");
+  exit();
+}
+
 if (isset($_POST['SUBMIT'])) {
   $name = $_POST["name"];
   $username = $_POST["username"];
@@ -11,14 +21,16 @@ if (isset($_POST['SUBMIT'])) {
   try {
       $adduser = new Signup($name, $username, $email, $passw);
       $adduser->insertUsers();
+    
+      $adduser->setUserRole('admin');
 
       header("Location: ../Users/UsersList.php");
       exit();
   } catch (Exception $e) {
-      echo "Problem gjatë regjistrimit: " . $e->getMessage();
+      echo "Gabim gjat regjistrimit:" . $e->getMessage();
   }
 }
-?> 
+?>
 <html lang="en">
 
 <head>
@@ -33,7 +45,7 @@ if (isset($_POST['SUBMIT'])) {
     <div class="login">
       <div class="login-form">
         <div class="logo">
-          <img src="../Users/logo.jpg" alt="" />
+          <img src="../../../../Honda Ks/asetet/logo.jpg" alt="" />
         </div>
         <div class="form">
           <form method="POST">
