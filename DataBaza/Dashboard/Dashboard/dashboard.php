@@ -1,20 +1,20 @@
 <?php
-// include('../../ConfigSession.php');
+include('../../ConfigSession.php');
 require_once "../../ConnectDB.php";
 
-// if (!isset($_SESSION["user_id"])) {
+if (!isset($_SESSION["user_id"])) {
 
-//   header("Location: ../../../Login/login.php");
-//   exit();
-// }
+  header("Location: ../../../Login/login.php");
+  exit();
+}
 
-// if ($_SESSION['user_role'] != 'admin') {
+if ($_SESSION['user_role'] != 'admin') {
 
-//   header("Location: ../../../Honda Ks/Home/Home.php");
-//   exit();
-// }
+  header("Location: ../../../Honda Ks/Home/Home.php");
+  exit();
+}
 
-// $users = strtoupper($_SESSION['user_role']);
+$users = strtoupper($_SESSION['user_role']);
 
 class GetData extends ConnectDB
 {
@@ -42,6 +42,18 @@ class GetData extends ConnectDB
       return false;
     }
   }
+  public function lastLogin()
+  {
+    $query = "SELECT * FROM lastlogin";
+    $stmt = $this->connect()->prepare($query);
+    $stmt->execute();
+
+    if ($stmt) {
+      return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    } else {
+      return false;
+    }
+  }
 }
 //Shfaqja e Produktit te fundit
 $getData = new GetData();
@@ -58,6 +70,10 @@ $getCc = $getData->getComments();
 end($getCc);
 $latestComments = [current($getCc)];
 
+//Shfaqja e te loguarve te fundit
+$getLastLogin = $getData->lastLogin();
+array_reverse($getLastLogin);
+$lastLogged = array_reverse($getLastLogin);
 ?>
 
 <html lang="en">
@@ -86,13 +102,13 @@ $latestComments = [current($getCc)];
         </ul>
       </div>
       <div class="useroradmin">
-        <p>USER</p>
+        <p><?php echo $users . " : " . $_SESSION['name'] ?></p>
       </div>
     </div>
     <div class="header-mobile" id="mobile-up">
       <div class="content-mobile">
         <img src="../../../Honda Ks/asetet/logo.jpg" alt="" />
-        <h2>Honda KS</h2>
+        <a class="home" href="../../../Honda Ks/Home/Home.php"><h2>Honda KS</h2></a>
         <svg id="menu-visible" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0,0,256,256">
           <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
             <g transform="scale(5.12,5.12)">
@@ -102,7 +118,7 @@ $latestComments = [current($getCc)];
         </svg>
       </div>
       <div id="menu" class="menu-mobile">
-        <ul>
+        <ul id="link-a">
           <a href="../../../Honda Ks/Home/Home.php">FAQJA KRYESORE</a>
           <a href="../Users/Users/UsersList.php">PËRDORUESIT</a>
           <a href="../Produktet/Produktet/produktet.php">PRODUKTET</a>
@@ -151,6 +167,14 @@ $latestComments = [current($getCc)];
           </div>
           <div class="info s">
             <h2 class="addprod">- Të Loguarit e Fundit -</h2>
+            <?php foreach ($lastLogged as $lastLogin) : ?>
+              <div class="coment-l">
+                <p>Roli: <span><?php echo $lastLogin['user_role']; ?></span></p>
+                <p>Emri: <br> <span><?php echo $lastLogin['user_name']; ?></span></p>
+                <p>Paisja: <span><?php echo substr($lastLogin['last_login_device'], 11, 31); ?></span></p>
+                <p>Koha e Logimit: <br><span><?php echo $lastLogin['last_login']; ?></span></p>
+              </div>
+            <?php endforeach; ?>
           </div>
         </div>
       </div>

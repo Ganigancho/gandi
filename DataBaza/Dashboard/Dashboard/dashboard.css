@@ -162,6 +162,10 @@ body {
   .header{
    display: none;
   }
+  .home{
+    text-decoration: none;
+    color: white;
+  }
   .header-mobile {
     display: block;
     background: rgb(242, 39, 39);
